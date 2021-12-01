@@ -1,0 +1,23 @@
+{
+    "name": "erycson/dyncio-ratchet-server",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Érycson Nóbrega",
+            "email": "egdn2004@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DyncIO\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "cboden/ratchet": "^0.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "pusher/pusher-php-server": "^7.0"
+    }
+}

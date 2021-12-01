@@ -1,0 +1,11 @@
+{
+    "app.id": 1,
+    "app.key": "example",
+    "app.secret": "example-secret",
+
+    "network.host": "127.0.0.1",
+    "network.port": 9090,
+    "network.path": "/dyncio",
+
+    "webhook.host": "http://127.0.0.1:9090/dyncio/webhook"
+}

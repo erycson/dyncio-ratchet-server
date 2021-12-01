@@ -1,0 +1,30 @@
+<script src="/dyncio/assets/js/pusher.min.js?v=v7.0.3"></script>
+<script>
+    // Exibe o log no console
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('example', {
+        wsHost: location.host.split(':')[0],
+        wsPort: location.host.split(':')[0] == '127.0.0.1' ? 9090 : undefined,
+        wsPath: '/dyncio',
+        forceTLS: false,
+        enabledTransports: ["ws"],
+        disabledTransports: ["flash"],
+        authEndpoint: "/dyncio/webhook"
+    });
+
+    console.log('Entrando nos canais');
+    var channel = pusher.subscribe('presence-canal');
+    channel.bind('pusher:subscription_succeeded', function(data) {
+      console.log('subscription_succeeded', data);
+    });
+    channel.bind('evento', function(data) {
+      console.log('evento', data);
+    });
+    channel.bind('pusher:member_added', function(m) {
+      console.log('usuário entrou', m);
+    });
+    channel.bind('pusher:member_removed', function(m) {
+      console.log('usuário saiu', m);
+    });
+</script>
