@@ -19,7 +19,7 @@ function random_id() {
     );
 }
 
-$config = json_decode(file_get_contents('config.json'), true);
+$config = json_decode(file_get_contents(__DIR__ . '/config.json'), true);
 
 cli_set_process_title("dyncio-ratchet-server {$config['network.host']}:{$config['network.port']}");
 
