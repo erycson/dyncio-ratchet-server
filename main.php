@@ -27,7 +27,7 @@ if ($config['network.path'] == '/') {
     throw new Exception('A configuração "network.path" não pode ser igual a "/", deixe nulo/vazio ou escreve um caminho');
 }
 
-$server = new AppServer($config['network.host'], $config['network.port']);
+$server = new AppServer($config['network.host'], $config['network.port'], '0.0.0.0');
 $server->route("{$config['network.path']}/apps/{app_id}/events", new EventServer, ['*']);
 $server->route("{$config['network.path']}/webhook", new TestServer, ['*']);
 

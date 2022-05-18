@@ -3,7 +3,7 @@
     "app.key": "example",
     "app.secret": "example-secret",
 
-    "network.host": "127.0.0.1",
+    "network.host": "",
     "network.port": 9090,
     "network.path": "/dyncio",
 
