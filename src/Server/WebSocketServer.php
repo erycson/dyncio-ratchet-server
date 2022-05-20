@@ -26,6 +26,8 @@ class WebSocketServer implements MessageComponentInterface
 
     public function onOpen(ConnectionInterface $conn)
     {
+        global $config;
+
         // Cria o novo
         $client = new WebSocketClient($this->channelManager, $conn);
     
@@ -46,7 +48,7 @@ class WebSocketServer implements MessageComponentInterface
             $client->close();
         }
         // Valida a chave da aplicação
-        elseif ($clientAppKey != 'shapeness') {
+        elseif ($clientAppKey != $config['app.key']) {
             $client->send([
                 'event' => 'pusher:error',
                 'data'  => ['code' => 4001, 'message' => "App key {$clientAppKey} not in this cluster. Did you forget to specify the cluster?"]
