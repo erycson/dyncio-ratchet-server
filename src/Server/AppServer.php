@@ -2,26 +2,26 @@
 
 namespace DyncIO\Server;
 
+use DyncIO\Lib\HttpServer;
 use Ratchet\App;
 use Ratchet\ComponentInterface;
-use React\EventLoop\LoopInterface;
-use React\EventLoop\Factory as LoopFactory;
-use React\Socket\Server as Reactor;
 use Ratchet\Http\HttpServerInterface;
 use Ratchet\Http\OriginCheck;
-use Ratchet\Wamp\WampServerInterface;
-use Ratchet\Server\IoServer;
-use Ratchet\Server\FlashPolicy;
-use Ratchet\Http\HttpServer;
 use Ratchet\Http\Router;
 use Ratchet\MessageComponentInterface;
+use Ratchet\Server\FlashPolicy;
+use Ratchet\Server\IoServer;
+use Ratchet\Wamp\WampServer;
+use Ratchet\Wamp\WampServerInterface;
 use Ratchet\WebSocket\MessageComponentInterface as WsMessageComponentInterface;
 use Ratchet\WebSocket\WsServer;
-use Ratchet\Wamp\WampServer;
-use Symfony\Component\Routing\RouteCollection;
-use Symfony\Component\Routing\Route;
-use Symfony\Component\Routing\RequestContext;
+use React\EventLoop\Factory as LoopFactory;
+use React\EventLoop\LoopInterface;
+use React\Socket\Server as Reactor;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\Route;
+use Symfony\Component\Routing\RouteCollection;
 
 class AppServer extends App
 {
